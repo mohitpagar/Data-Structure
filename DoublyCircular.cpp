@@ -13,14 +13,14 @@ typedef struct node NODE;
 typedef struct node * PNODE;
 typedef struct node ** PPNODE;
 
-class DoublyLL
+class DoublyCL
 {
     public:
        PNODE First;
        PNODE Last;
        int iCount;
 
-       DoublyLL();
+       DoublyCL();
 
        void InsertFirst(int no);
        void InsertLast(int no);
@@ -33,14 +33,14 @@ class DoublyLL
        void Display();
 };
 
-DoublyLL :: DoublyLL()
+DoublyCL :: DoublyCL()
 {
     First = NULL;
     Last = NULL;
     iCount = NULL;
 }
 
-void DoublyLL :: InsertFirst(int no)
+void DoublyCL :: InsertFirst(int no)
 {
     PNODE newn = new NODE;
 
@@ -64,7 +64,7 @@ void DoublyLL :: InsertFirst(int no)
     Last -> next = newn;
 }
 
-void DoublyLL :: InsertLast(int no)
+void DoublyCL :: InsertLast(int no)
 {
     PNODE newn = new NODE;
 
@@ -89,7 +89,7 @@ void DoublyLL :: InsertLast(int no)
     Last -> newn = First;
 }
 
-void DoublyLL :: InsertAtPosition(int no, int ipos)
+void DoublyCL :: InsertAtPosition(int no, int ipos)
 {
     if((ipos < 1) || (ipos > iCount + 1))
     {
@@ -131,7 +131,7 @@ void DoublyLL :: InsertAtPosition(int no, int ipos)
     }
 }
 
-void DoublyLL:: DeleteAtPosition(int ipos)
+void DoublyCL:: DeleteAtPosition(int ipos)
 {
     if((ipos < 1) || (ipos > iCount))
     {
@@ -166,7 +166,7 @@ void DoublyLL:: DeleteAtPosition(int ipos)
     }
 }
 
-void DoublyLL :: DeleteFirst()
+void DoublyCL :: DeleteFirst()
 {
     if((First == NULL) && (Last == NULL))
     {
@@ -190,7 +190,7 @@ void DoublyLL :: DeleteFirst()
     }
 }
 
-void DoublyLL :: DeleteLast()
+void DoublyCL :: DeleteLast()
 {
     if((First == NULL) && (Last == NULL))
     {
@@ -235,7 +235,7 @@ void DoublyCL :: Display()
 
 int main()
 {
-    DoublyLL obj;
+    DoublyCL obj;
 
     obj.InsertFirst(51);
     obj.InsertFirst(21);
